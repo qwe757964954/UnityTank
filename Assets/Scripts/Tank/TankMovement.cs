@@ -12,11 +12,11 @@ namespace Complete
         public AudioClip m_EngineDriving;           // Audio to play when the tank is moving.
 		public float m_PitchRange = 0.2f;           // The amount by which the pitch of the engine noises can vary.
 
-        private string m_MovementAxisName;          // The name of the input axis for moving forward and back.
-        private string m_TurnAxisName;              // The name of the input axis for turning.
+        public float m_MovementInputValue;         // The current value of the movement input.
+        public float m_TurnInputValue;             // The current value of the turn input.
+        private string m_MovementAxisName;         // The name of the input axis for moving forward and back.
+        private string m_TurnAxisName;             // The name of the input axis for turning.
         private Rigidbody m_Rigidbody;              // Reference used to move the tank.
-        private float m_MovementInputValue;         // The current value of the movement input.
-        private float m_TurnInputValue;             // The current value of the turn input.
         private float m_OriginalPitch;              // The pitch of the audio source at the start of the scene.
         private ParticleSystem[] m_particleSystems; // References to all the particles systems used by the Tanks
 

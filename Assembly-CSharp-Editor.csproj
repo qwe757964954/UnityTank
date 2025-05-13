@@ -12,7 +12,7 @@
     <ProductVersion>10.0.20506</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
     <RootNamespace></RootNamespace>
-    <ProjectGuid>{3c0603ac-53ea-08a4-e252-4b43726d9e8f}</ProjectGuid>
+    <ProjectGuid>{b4572fa3-3527-91b4-118d-900783ac428f}</ProjectGuid>
     <ProjectTypeGuids>{E097FAD1-6243-4DAD-9C02-E9B9EFC3FFC1};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
@@ -45,7 +45,36 @@
     <Analyzer Include="D:\Hub\Editor\2022.3.62f1\Editor\Data\Tools\Unity.SourceGenerators\Unity.Properties.SourceGenerator.dll" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Library\PackageCache\com.justinpbarnett.unity-mcp@cbe9b3a2f0\Editor\Models\Command.cs" />
+    <Compile Include="Library\PackageCache\com.justinpbarnett.unity-mcp@cbe9b3a2f0\Editor\Helpers\ServerInstaller.cs" />
+    <Compile Include="Library\PackageCache\com.justinpbarnett.unity-mcp@cbe9b3a2f0\Editor\Models\McpStatus.cs" />
+    <Compile Include="Library\PackageCache\com.justinpbarnett.unity-mcp@cbe9b3a2f0\Editor\Tools\CommandRegistry.cs" />
+    <Compile Include="Library\PackageCache\com.justinpbarnett.unity-mcp@cbe9b3a2f0\Editor\Windows\ManualConfigEditorWindow.cs" />
     <Compile Include="Assets\TutorialInfo\Scripts\Editor\ReadmeEditor.cs" />
+    <Compile Include="Library\PackageCache\com.justinpbarnett.unity-mcp@cbe9b3a2f0\Editor\Tools\ManageAsset.cs" />
+    <Compile Include="Library\PackageCache\com.justinpbarnett.unity-mcp@cbe9b3a2f0\Editor\Tools\ExecuteMenuItem.cs" />
+    <Compile Include="Library\PackageCache\com.justinpbarnett.unity-mcp@cbe9b3a2f0\Editor\Tools\ManageEditor.cs" />
+    <Compile Include="Library\PackageCache\com.justinpbarnett.unity-mcp@cbe9b3a2f0\Editor\Models\McpClient.cs" />
+    <Compile Include="Library\PackageCache\com.justinpbarnett.unity-mcp@cbe9b3a2f0\Editor\Tools\ManageGameObject.cs" />
+    <Compile Include="Library\PackageCache\com.justinpbarnett.unity-mcp@cbe9b3a2f0\Editor\Models\MCPConfigServers.cs" />
+    <Compile Include="Assets\Behavior Designer\Editor\BehaviorTreeInspector.cs" />
+    <Compile Include="Assets\Behavior Designer\Editor\ExternalBehaviorTreeInspector.cs" />
+    <Compile Include="Library\PackageCache\com.justinpbarnett.unity-mcp@cbe9b3a2f0\Editor\Helpers\Vector3Helper.cs" />
+    <Compile Include="Library\PackageCache\com.justinpbarnett.unity-mcp@cbe9b3a2f0\Editor\Models\MCPConfigServer.cs" />
+    <Compile Include="Library\PackageCache\com.justinpbarnett.unity-mcp@cbe9b3a2f0\Editor\Tools\ReadConsole.cs" />
+    <Compile Include="Library\PackageCache\com.justinpbarnett.unity-mcp@cbe9b3a2f0\Editor\Models\McpTypes.cs" />
+    <Compile Include="Library\PackageCache\com.justinpbarnett.unity-mcp@cbe9b3a2f0\Editor\UnityMcpBridge.cs" />
+    <Compile Include="Library\PackageCache\com.justinpbarnett.unity-mcp@cbe9b3a2f0\Editor\Windows\UnityMcpEditorWindow.cs" />
+    <Compile Include="Library\PackageCache\com.justinpbarnett.unity-mcp@cbe9b3a2f0\Editor\Tools\ManageScript.cs" />
+    <Compile Include="Library\PackageCache\com.justinpbarnett.unity-mcp@cbe9b3a2f0\Editor\Tools\ManageScene.cs" />
+    <Compile Include="Library\PackageCache\com.justinpbarnett.unity-mcp@cbe9b3a2f0\Editor\Data\DefaultServerConfig.cs" />
+    <Compile Include="Assets\Behavior Designer\Editor\Object Drawers\FloatSliderDrawer.cs" />
+    <Compile Include="Assets\Behavior Designer\Editor\Object Drawers\IntSliderDrawer.cs" />
+    <Compile Include="Library\PackageCache\com.justinpbarnett.unity-mcp@cbe9b3a2f0\Editor\Models\McpConfig.cs" />
+    <Compile Include="Library\PackageCache\com.justinpbarnett.unity-mcp@cbe9b3a2f0\Editor\Data\McpClients.cs" />
+    <Compile Include="Library\PackageCache\com.justinpbarnett.unity-mcp@cbe9b3a2f0\Editor\Models\ServerConfig.cs" />
+    <Compile Include="Library\PackageCache\com.justinpbarnett.unity-mcp@cbe9b3a2f0\Editor\Helpers\Response.cs" />
+    <None Include="Assets\Behavior Designer\Editor\GridShader.shader" />
     <Reference Include="UnityEngine">
       <HintPath>D:\Hub\Editor\2022.3.62f1\Editor\Data\Managed\UnityEngine\UnityEngine.dll</HintPath>
     </Reference>
@@ -314,31 +343,46 @@
       <HintPath>D:\Hub\Editor\2022.3.62f1\Editor\Data\PlaybackEngines\WindowsStandaloneSupport\UnityEditor.WindowsStandalone.Extensions.dll</HintPath>
     </Reference>
     <Reference Include="Unity.VisualScripting.YamlDotNet">
-      <HintPath>D:\UnityProj\Tank\Library\PackageCache\com.unity.visualscripting@1.9.4\Editor\VisualScripting.Core\Dependencies\YamlDotNet\Unity.VisualScripting.YamlDotNet.dll</HintPath>
+      <HintPath>D:\UnityProj\UnityTank\Library\PackageCache\com.unity.visualscripting@1.9.4\Editor\VisualScripting.Core\Dependencies\YamlDotNet\Unity.VisualScripting.YamlDotNet.dll</HintPath>
     </Reference>
     <Reference Include="unityplastic">
-      <HintPath>D:\UnityProj\Tank\Library\PackageCache\com.unity.collab-proxy@2.8.2\Lib\Editor\unityplastic.dll</HintPath>
+      <HintPath>D:\UnityProj\UnityTank\Library\PackageCache\com.unity.collab-proxy@2.8.2\Lib\Editor\unityplastic.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Plastic.Antlr3.Runtime">
-      <HintPath>D:\UnityProj\Tank\Library\PackageCache\com.unity.collab-proxy@2.8.2\Lib\Editor\Unity.Plastic.Antlr3.Runtime.dll</HintPath>
+      <HintPath>D:\UnityProj\UnityTank\Library\PackageCache\com.unity.collab-proxy@2.8.2\Lib\Editor\Unity.Plastic.Antlr3.Runtime.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Plastic.Newtonsoft.Json">
-      <HintPath>D:\UnityProj\Tank\Library\PackageCache\com.unity.collab-proxy@2.8.2\Lib\Editor\Unity.Plastic.Newtonsoft.Json.dll</HintPath>
+      <HintPath>D:\UnityProj\UnityTank\Library\PackageCache\com.unity.collab-proxy@2.8.2\Lib\Editor\Unity.Plastic.Newtonsoft.Json.dll</HintPath>
     </Reference>
     <Reference Include="log4netPlastic">
-      <HintPath>D:\UnityProj\Tank\Library\PackageCache\com.unity.collab-proxy@2.8.2\Lib\Editor\log4netPlastic.dll</HintPath>
+      <HintPath>D:\UnityProj\UnityTank\Library\PackageCache\com.unity.collab-proxy@2.8.2\Lib\Editor\log4netPlastic.dll</HintPath>
     </Reference>
     <Reference Include="Unity.VisualScripting.IonicZip">
-      <HintPath>D:\UnityProj\Tank\Library\PackageCache\com.unity.visualscripting@1.9.4\Editor\VisualScripting.Core\Dependencies\DotNetZip\Unity.VisualScripting.IonicZip.dll</HintPath>
+      <HintPath>D:\UnityProj\UnityTank\Library\PackageCache\com.unity.visualscripting@1.9.4\Editor\VisualScripting.Core\Dependencies\DotNetZip\Unity.VisualScripting.IonicZip.dll</HintPath>
     </Reference>
     <Reference Include="Unity.VisualScripting.Antlr3.Runtime">
-      <HintPath>D:\UnityProj\Tank\Library\PackageCache\com.unity.visualscripting@1.9.4\Runtime\VisualScripting.Flow\Dependencies\NCalc\Unity.VisualScripting.Antlr3.Runtime.dll</HintPath>
+      <HintPath>D:\UnityProj\UnityTank\Library\PackageCache\com.unity.visualscripting@1.9.4\Runtime\VisualScripting.Flow\Dependencies\NCalc\Unity.VisualScripting.Antlr3.Runtime.dll</HintPath>
     </Reference>
     <Reference Include="Unity.VisualScripting.TextureAssets">
-      <HintPath>D:\UnityProj\Tank\Library\PackageCache\com.unity.visualscripting@1.9.4\Editor\VisualScripting.Core\EditorAssetResources\Unity.VisualScripting.TextureAssets.dll</HintPath>
+      <HintPath>D:\UnityProj\UnityTank\Library\PackageCache\com.unity.visualscripting@1.9.4\Editor\VisualScripting.Core\EditorAssetResources\Unity.VisualScripting.TextureAssets.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>D:\UnityProj\UnityTank\Library\PackageCache\com.unity.nuget.newtonsoft-json@3.2.1\Runtime\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="BehaviorDesignerEditor">
+      <HintPath>D:\UnityProj\UnityTank\Assets\Behavior Designer\Editor\BehaviorDesignerEditor.dll</HintPath>
+    </Reference>
+    <Reference Include="BehaviorDesignerRuntime">
+      <HintPath>D:\UnityProj\UnityTank\Assets\Behavior Designer\Runtime\BehaviorDesignerRuntime.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Collections.LowLevel.ILSupport">
+      <HintPath>D:\UnityProj\UnityTank\Library\PackageCache\com.unity.collections@1.2.4\Unity.Collections.LowLevel.ILSupport\Unity.Collections.LowLevel.ILSupport.dll</HintPath>
+    </Reference>
+    <Reference Include="Mono.Cecil">
+      <HintPath>D:\UnityProj\UnityTank\Library\PackageCache\com.unity.nuget.mono-cecil@1.11.4\Mono.Cecil.dll</HintPath>
     </Reference>
     <Reference Include="nunit.framework">
-      <HintPath>D:\UnityProj\Tank\Library\PackageCache\com.unity.ext.nunit@1.0.6\net35\unity-custom\nunit.framework.dll</HintPath>
+      <HintPath>D:\UnityProj\UnityTank\Library\PackageCache\com.unity.ext.nunit@1.0.6\net35\unity-custom\nunit.framework.dll</HintPath>
     </Reference>
     <Reference Include="UnityEditor.iOS.Extensions.Xcode">
       <HintPath>D:\Hub\Editor\2022.3.62f1\Editor\Data\PlaybackEngines\iOSSupport\UnityEditor.iOS.Extensions.Xcode.dll</HintPath>
@@ -731,132 +775,153 @@
       <HintPath>D:\Hub\Editor\2022.3.62f1\Editor\Data\UnityReferenceAssemblies\unity-4.8-api\Facades\System.Xml.XPath.XDocument.dll</HintPath>
     </Reference>
     <Reference Include="UnityEditor.TestRunner">
-      <HintPath>D:\UnityProj\Tank\Library\ScriptAssemblies\UnityEditor.TestRunner.dll</HintPath>
+      <HintPath>D:\UnityProj\UnityTank\Library\ScriptAssemblies\UnityEditor.TestRunner.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.TestRunner">
-      <HintPath>D:\UnityProj\Tank\Library\ScriptAssemblies\UnityEngine.TestRunner.dll</HintPath>
+      <HintPath>D:\UnityProj\UnityTank\Library\ScriptAssemblies\UnityEngine.TestRunner.dll</HintPath>
     </Reference>
     <Reference Include="Unity.RenderPipelines.ShaderGraph.ShaderGraphLibrary">
-      <HintPath>D:\UnityProj\Tank\Library\ScriptAssemblies\Unity.RenderPipelines.ShaderGraph.ShaderGraphLibrary.dll</HintPath>
+      <HintPath>D:\UnityProj\UnityTank\Library\ScriptAssemblies\Unity.RenderPipelines.ShaderGraph.ShaderGraphLibrary.dll</HintPath>
     </Reference>
     <Reference Include="Unity.RenderPipelines.Core.Runtime">
-      <HintPath>D:\UnityProj\Tank\Library\ScriptAssemblies\Unity.RenderPipelines.Core.Runtime.dll</HintPath>
+      <HintPath>D:\UnityProj\UnityTank\Library\ScriptAssemblies\Unity.RenderPipelines.Core.Runtime.dll</HintPath>
     </Reference>
     <Reference Include="Unity.RenderPipelines.Universal.Runtime">
-      <HintPath>D:\UnityProj\Tank\Library\ScriptAssemblies\Unity.RenderPipelines.Universal.Runtime.dll</HintPath>
+      <HintPath>D:\UnityProj\UnityTank\Library\ScriptAssemblies\Unity.RenderPipelines.Universal.Runtime.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Postprocessing.Runtime">
-      <HintPath>D:\UnityProj\Tank\Library\ScriptAssemblies\Unity.Postprocessing.Runtime.dll</HintPath>
+      <HintPath>D:\UnityProj\UnityTank\Library\ScriptAssemblies\Unity.Postprocessing.Runtime.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Burst.Editor">
-      <HintPath>D:\UnityProj\Tank\Library\ScriptAssemblies\Unity.Burst.Editor.dll</HintPath>
+      <HintPath>D:\UnityProj\UnityTank\Library\ScriptAssemblies\Unity.Burst.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Burst">
-      <HintPath>D:\UnityProj\Tank\Library\ScriptAssemblies\Unity.Burst.dll</HintPath>
+      <HintPath>D:\UnityProj\UnityTank\Library\ScriptAssemblies\Unity.Burst.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Timeline.Editor">
-      <HintPath>D:\UnityProj\Tank\Library\ScriptAssemblies\Unity.Timeline.Editor.dll</HintPath>
+      <HintPath>D:\UnityProj\UnityTank\Library\ScriptAssemblies\Unity.Timeline.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.VisualScripting.Shared.Editor">
-      <HintPath>D:\UnityProj\Tank\Library\ScriptAssemblies\Unity.VisualScripting.Shared.Editor.dll</HintPath>
+      <HintPath>D:\UnityProj\UnityTank\Library\ScriptAssemblies\Unity.VisualScripting.Shared.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.ShaderGraph.Editor">
-      <HintPath>D:\UnityProj\Tank\Library\ScriptAssemblies\Unity.ShaderGraph.Editor.dll</HintPath>
+      <HintPath>D:\UnityProj\UnityTank\Library\ScriptAssemblies\Unity.ShaderGraph.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.VisualStudio.Editor">
-      <HintPath>D:\UnityProj\Tank\Library\ScriptAssemblies\Unity.VisualStudio.Editor.dll</HintPath>
+      <HintPath>D:\UnityProj\UnityTank\Library\ScriptAssemblies\Unity.VisualStudio.Editor.dll</HintPath>
     </Reference>
     <Reference Include="UnityEditor.UI">
-      <HintPath>D:\UnityProj\Tank\Library\ScriptAssemblies\UnityEditor.UI.dll</HintPath>
+      <HintPath>D:\UnityProj\UnityTank\Library\ScriptAssemblies\UnityEditor.UI.dll</HintPath>
     </Reference>
     <Reference Include="Unity.VisualScripting.Core">
-      <HintPath>D:\UnityProj\Tank\Library\ScriptAssemblies\Unity.VisualScripting.Core.dll</HintPath>
+      <HintPath>D:\UnityProj\UnityTank\Library\ScriptAssemblies\Unity.VisualScripting.Core.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.UI">
-      <HintPath>D:\UnityProj\Tank\Library\ScriptAssemblies\UnityEngine.UI.dll</HintPath>
+      <HintPath>D:\UnityProj\UnityTank\Library\ScriptAssemblies\UnityEngine.UI.dll</HintPath>
     </Reference>
     <Reference Include="Unity.VisualScripting.Core.Editor">
-      <HintPath>D:\UnityProj\Tank\Library\ScriptAssemblies\Unity.VisualScripting.Core.Editor.dll</HintPath>
+      <HintPath>D:\UnityProj\UnityTank\Library\ScriptAssemblies\Unity.VisualScripting.Core.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Rider.Editor">
-      <HintPath>D:\UnityProj\Tank\Library\ScriptAssemblies\Unity.Rider.Editor.dll</HintPath>
+      <HintPath>D:\UnityProj\UnityTank\Library\ScriptAssemblies\Unity.Rider.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.2D.Sprite.Editor">
-      <HintPath>D:\UnityProj\Tank\Library\ScriptAssemblies\Unity.2D.Sprite.Editor.dll</HintPath>
+      <HintPath>D:\UnityProj\UnityTank\Library\ScriptAssemblies\Unity.2D.Sprite.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.RenderPipelines.Universal.Config.Runtime">
-      <HintPath>D:\UnityProj\Tank\Library\ScriptAssemblies\Unity.RenderPipelines.Universal.Config.Runtime.dll</HintPath>
+      <HintPath>D:\UnityProj\UnityTank\Library\ScriptAssemblies\Unity.RenderPipelines.Universal.Config.Runtime.dll</HintPath>
     </Reference>
     <Reference Include="Unity.RenderPipelines.Universal.2D.Internal">
-      <HintPath>D:\UnityProj\Tank\Library\ScriptAssemblies\Unity.RenderPipelines.Universal.2D.Internal.dll</HintPath>
+      <HintPath>D:\UnityProj\UnityTank\Library\ScriptAssemblies\Unity.RenderPipelines.Universal.2D.Internal.dll</HintPath>
     </Reference>
     <Reference Include="Unity.RenderPipelines.Core.Editor">
-      <HintPath>D:\UnityProj\Tank\Library\ScriptAssemblies\Unity.RenderPipelines.Core.Editor.dll</HintPath>
+      <HintPath>D:\UnityProj\UnityTank\Library\ScriptAssemblies\Unity.RenderPipelines.Core.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.VisualScripting.Flow">
-      <HintPath>D:\UnityProj\Tank\Library\ScriptAssemblies\Unity.VisualScripting.Flow.dll</HintPath>
+      <HintPath>D:\UnityProj\UnityTank\Library\ScriptAssemblies\Unity.VisualScripting.Flow.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Netcode.Components">
+      <HintPath>D:\UnityProj\UnityTank\Library\ScriptAssemblies\Unity.Netcode.Components.dll</HintPath>
     </Reference>
     <Reference Include="Unity.VisualScripting.Flow.Editor">
-      <HintPath>D:\UnityProj\Tank\Library\ScriptAssemblies\Unity.VisualScripting.Flow.Editor.dll</HintPath>
+      <HintPath>D:\UnityProj\UnityTank\Library\ScriptAssemblies\Unity.VisualScripting.Flow.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Mathematics.Editor">
-      <HintPath>D:\UnityProj\Tank\Library\ScriptAssemblies\Unity.Mathematics.Editor.dll</HintPath>
+      <HintPath>D:\UnityProj\UnityTank\Library\ScriptAssemblies\Unity.Mathematics.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.RenderPipeline.Universal.ShaderLibrary">
-      <HintPath>D:\UnityProj\Tank\Library\ScriptAssemblies\Unity.RenderPipeline.Universal.ShaderLibrary.dll</HintPath>
+      <HintPath>D:\UnityProj\UnityTank\Library\ScriptAssemblies\Unity.RenderPipeline.Universal.ShaderLibrary.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Networking.Transport">
+      <HintPath>D:\UnityProj\UnityTank\Library\ScriptAssemblies\Unity.Networking.Transport.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Timeline">
-      <HintPath>D:\UnityProj\Tank\Library\ScriptAssemblies\Unity.Timeline.dll</HintPath>
+      <HintPath>D:\UnityProj\UnityTank\Library\ScriptAssemblies\Unity.Timeline.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Netcode.Editor">
+      <HintPath>D:\UnityProj\UnityTank\Library\ScriptAssemblies\Unity.Netcode.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.VisualScripting.SettingsProvider.Editor">
-      <HintPath>D:\UnityProj\Tank\Library\ScriptAssemblies\Unity.VisualScripting.SettingsProvider.Editor.dll</HintPath>
+      <HintPath>D:\UnityProj\UnityTank\Library\ScriptAssemblies\Unity.VisualScripting.SettingsProvider.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.RenderPipelines.Core.ShaderLibrary">
-      <HintPath>D:\UnityProj\Tank\Library\ScriptAssemblies\Unity.RenderPipelines.Core.ShaderLibrary.dll</HintPath>
+      <HintPath>D:\UnityProj\UnityTank\Library\ScriptAssemblies\Unity.RenderPipelines.Core.ShaderLibrary.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Collections">
+      <HintPath>D:\UnityProj\UnityTank\Library\ScriptAssemblies\Unity.Collections.dll</HintPath>
     </Reference>
     <Reference Include="Unity.PlasticSCM.Editor">
-      <HintPath>D:\UnityProj\Tank\Library\ScriptAssemblies\Unity.PlasticSCM.Editor.dll</HintPath>
+      <HintPath>D:\UnityProj\UnityTank\Library\ScriptAssemblies\Unity.PlasticSCM.Editor.dll</HintPath>
     </Reference>
-    <Reference Include="Unity.VisualScripting.State.Editor">
-      <HintPath>D:\UnityProj\Tank\Library\ScriptAssemblies\Unity.VisualScripting.State.Editor.dll</HintPath>
+    <Reference Include="Unity.Netcode.Runtime">
+      <HintPath>D:\UnityProj\UnityTank\Library\ScriptAssemblies\Unity.Netcode.Runtime.dll</HintPath>
     </Reference>
-    <Reference Include="PPv2URPConverters">
-      <HintPath>D:\UnityProj\Tank\Library\ScriptAssemblies\PPv2URPConverters.dll</HintPath>
+    <Reference Include="Unity.Netcode.Editor.PackageChecker">
+      <HintPath>D:\UnityProj\UnityTank\Library\ScriptAssemblies\Unity.Netcode.Editor.PackageChecker.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Postprocessing.Editor">
-      <HintPath>D:\UnityProj\Tank\Library\ScriptAssemblies\Unity.Postprocessing.Editor.dll</HintPath>
+      <HintPath>D:\UnityProj\UnityTank\Library\ScriptAssemblies\Unity.Postprocessing.Editor.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.VisualScripting.State.Editor">
+      <HintPath>D:\UnityProj\UnityTank\Library\ScriptAssemblies\Unity.VisualScripting.State.Editor.dll</HintPath>
+    </Reference>
+    <Reference Include="PPv2URPConverters">
+      <HintPath>D:\UnityProj\UnityTank\Library\ScriptAssemblies\PPv2URPConverters.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Mathematics">
-      <HintPath>D:\UnityProj\Tank\Library\ScriptAssemblies\Unity.Mathematics.dll</HintPath>
+      <HintPath>D:\UnityProj\UnityTank\Library\ScriptAssemblies\Unity.Mathematics.dll</HintPath>
     </Reference>
     <Reference Include="Unity.TextMeshPro">
-      <HintPath>D:\UnityProj\Tank\Library\ScriptAssemblies\Unity.TextMeshPro.dll</HintPath>
+      <HintPath>D:\UnityProj\UnityTank\Library\ScriptAssemblies\Unity.TextMeshPro.dll</HintPath>
     </Reference>
     <Reference Include="Unity.TextMeshPro.Editor">
-      <HintPath>D:\UnityProj\Tank\Library\ScriptAssemblies\Unity.TextMeshPro.Editor.dll</HintPath>
+      <HintPath>D:\UnityProj\UnityTank\Library\ScriptAssemblies\Unity.TextMeshPro.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Searcher.Editor">
-      <HintPath>D:\UnityProj\Tank\Library\ScriptAssemblies\Unity.Searcher.Editor.dll</HintPath>
+      <HintPath>D:\UnityProj\UnityTank\Library\ScriptAssemblies\Unity.Searcher.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.RenderPipelines.Universal.Shaders">
-      <HintPath>D:\UnityProj\Tank\Library\ScriptAssemblies\Unity.RenderPipelines.Universal.Shaders.dll</HintPath>
+      <HintPath>D:\UnityProj\UnityTank\Library\ScriptAssemblies\Unity.RenderPipelines.Universal.Shaders.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Networking.Editor">
+      <HintPath>D:\UnityProj\UnityTank\Library\ScriptAssemblies\Unity.Networking.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.VisualScripting.State">
-      <HintPath>D:\UnityProj\Tank\Library\ScriptAssemblies\Unity.VisualScripting.State.dll</HintPath>
+      <HintPath>D:\UnityProj\UnityTank\Library\ScriptAssemblies\Unity.VisualScripting.State.dll</HintPath>
     </Reference>
     <Reference Include="Unity.VSCode.Editor">
-      <HintPath>D:\UnityProj\Tank\Library\ScriptAssemblies\Unity.VSCode.Editor.dll</HintPath>
+      <HintPath>D:\UnityProj\UnityTank\Library\ScriptAssemblies\Unity.VSCode.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.2D.Tilemap.Editor">
-      <HintPath>D:\UnityProj\Tank\Library\ScriptAssemblies\Unity.2D.Tilemap.Editor.dll</HintPath>
+      <HintPath>D:\UnityProj\UnityTank\Library\ScriptAssemblies\Unity.2D.Tilemap.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.RenderPipelines.Universal.Editor">
-      <HintPath>D:\UnityProj\Tank\Library\ScriptAssemblies\Unity.RenderPipelines.Universal.Editor.dll</HintPath>
+      <HintPath>D:\UnityProj\UnityTank\Library\ScriptAssemblies\Unity.RenderPipelines.Universal.Editor.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="Assembly-CSharp.csproj">
-      <Project>{6dc059be-ac9a-a864-0390-8ca6fbc949dd}</Project>
+      <Project>{e00e709b-83fa-2a77-5e5d-f36a1cde372f}</Project>
       <Name>Assembly-CSharp</Name>
     </ProjectReference>
   </ItemGroup>

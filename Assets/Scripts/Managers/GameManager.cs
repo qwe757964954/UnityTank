@@ -36,20 +36,30 @@ namespace Complete
             StartCoroutine (GameLoop ());
         }
 
-
+        
         private void SpawnAllTanks()
         {
             // For all the tanks...
             for (int i = 0; i < m_Tanks.Length; i++)
             {
-                // ... create them, set their player number and references needed for control.
+                // Create them, set their player number and references needed for control.
                 m_Tanks[i].m_Instance =
                     Instantiate(m_TankPrefab, m_Tanks[i].m_SpawnPoint.position, m_Tanks[i].m_SpawnPoint.rotation) as GameObject;
                 m_Tanks[i].m_PlayerNumber = i + 1;
                 m_Tanks[i].Setup();
+
+                // Assign tags to the tanks
+                if (i == 0)
+                {
+                    m_Tanks[i].m_Instance.tag = "Player"; // Tag for Tank 1 (assuming this is the player)
+                }
+                else if (i == 1)
+                {
+                    // m_Tanks[i].m_Instance.tag = "Player"; // Tag for Tank 2
+                }
+                // Add more conditions if there are additional tanks
             }
         }
-
 
         private void SetCameraTargets()
         {
