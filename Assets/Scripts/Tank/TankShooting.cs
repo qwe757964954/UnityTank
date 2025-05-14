@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.EventSystems;
 
 namespace Complete
 {
@@ -21,7 +22,9 @@ namespace Complete
         private float m_CurrentLaunchForce;         // The force that will be given to the shell when the fire button is released.
         private float m_ChargeSpeed;                // How fast the launch force increases, based on the max charge time.
         private bool m_Fired;                       // Whether or not the shell has been launched with this button press.
+        private bool m_LastPressed = false;
 
+        public AttackButton attackButton; // 直接用类型名
 
         private void OnEnable()
         {
@@ -43,44 +46,64 @@ namespace Complete
 
         private void Update ()
         {
-            // Debug.Log($"Charge: {m_CurrentLaunchForce}/{m_MaxLaunchForce}, Fired: {m_Fired}");
+            bool useAttackButton = attackButton != null;
+            bool isPressed = useAttackButton && attackButton.IsPressed;
 
-            // The slider should have a default value of the minimum launch force.
-            m_AimSlider.value = m_MinLaunchForce;
-
-            // If the max force has been exceeded and the shell hasn't yet been launched...
-            if (m_CurrentLaunchForce >= m_MaxLaunchForce && !m_Fired)
+            if (useAttackButton)
             {
-                Debug.Log("Reached max force, firing!");
-
-                // ... use the max force and launch the shell.
-                m_CurrentLaunchForce = m_MaxLaunchForce;
-                Fire ();
+                // 检测"刚刚按下"
+                if (isPressed && !m_LastPressed)
+                {
+                    m_Fired = false;
+                    m_CurrentLaunchForce = m_MinLaunchForce;
+                    m_ShootingAudio.clip = m_ChargingClip;
+                    m_ShootingAudio.Play();
+                }
+                if (isPressed && !m_Fired)
+                {
+                    m_CurrentLaunchForce += m_ChargeSpeed * Time.deltaTime;
+                    m_AimSlider.value = m_CurrentLaunchForce;
+                    if (m_CurrentLaunchForce >= m_MaxLaunchForce)
+                    {
+                        m_CurrentLaunchForce = m_MaxLaunchForce;
+                        Fire();
+                    }
+                }
+                else if (!isPressed && !m_Fired && m_LastPressed)
+                {
+                    Fire();
+                }
+                else if (!isPressed)
+                {
+                    m_AimSlider.value = m_MinLaunchForce;
+                }
+                m_LastPressed = isPressed;
             }
-            // Otherwise, if the fire button has just started being pressed...
-            else if (Input.GetButtonDown (m_FireButton))
+            else
             {
-                // ... reset the fired flag and reset the launch force.
-                m_Fired = false;
-                m_CurrentLaunchForce = m_MinLaunchForce;
-
-                // Change the clip to the charging clip and start it playing.
-                m_ShootingAudio.clip = m_ChargingClip;
-                m_ShootingAudio.Play ();
-            }
-            // Otherwise, if the fire button is being held and the shell hasn't been launched yet...
-            else if (Input.GetButton (m_FireButton) && !m_Fired)
-            {
-                // Increment the launch force and update the slider.
-                m_CurrentLaunchForce += m_ChargeSpeed * Time.deltaTime;
-
-                m_AimSlider.value = m_CurrentLaunchForce;
-            }
-            // Otherwise, if the fire button is released and the shell hasn't been launched yet...
-            else if (Input.GetButtonUp (m_FireButton) && !m_Fired)
-            {
-                // ... launch the shell.
-                Fire ();
+                // 原有PC端输入逻辑
+                m_AimSlider.value = m_MinLaunchForce;
+                if (m_CurrentLaunchForce >= m_MaxLaunchForce && !m_Fired)
+                {
+                    m_CurrentLaunchForce = m_MaxLaunchForce;
+                    Fire();
+                }
+                else if (Input.GetButtonDown(m_FireButton))
+                {
+                    m_Fired = false;
+                    m_CurrentLaunchForce = m_MinLaunchForce;
+                    m_ShootingAudio.clip = m_ChargingClip;
+                    m_ShootingAudio.Play();
+                }
+                else if (Input.GetButton(m_FireButton) && !m_Fired)
+                {
+                    m_CurrentLaunchForce += m_ChargeSpeed * Time.deltaTime;
+                    m_AimSlider.value = m_CurrentLaunchForce;
+                }
+                else if (Input.GetButtonUp(m_FireButton) && !m_Fired)
+                {
+                    Fire();
+                }
             }
         }
 

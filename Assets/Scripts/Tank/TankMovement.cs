@@ -19,7 +19,7 @@ namespace Complete
         private Rigidbody m_Rigidbody;              // Reference used to move the tank.
         private float m_OriginalPitch;              // The pitch of the audio source at the start of the scene.
         private ParticleSystem[] m_particleSystems; // References to all the particles systems used by the Tanks
-
+        public VirtualJoystick joystick; // 拖到Inspector
         private void Awake ()
         {
             m_Rigidbody = GetComponent<Rigidbody> ();
@@ -61,6 +61,7 @@ namespace Complete
 
         private void Start ()
         {
+            
             // The axes names are based on player number.
             m_MovementAxisName = "Vertical" + m_PlayerNumber;
             m_TurnAxisName = "Horizontal" + m_PlayerNumber;
@@ -70,13 +71,19 @@ namespace Complete
         }
 
 
-        private void Update ()
+        private void Update()
         {
-            // Store the value of both input axes.
-            m_MovementInputValue = Input.GetAxis (m_MovementAxisName);
-            m_TurnInputValue = Input.GetAxis (m_TurnAxisName);
-
-            EngineAudio ();
+            if (joystick != null)
+            {
+                m_MovementInputValue = joystick.InputDirection.y;
+                m_TurnInputValue = joystick.InputDirection.x;
+            }
+            else
+            {
+                m_MovementInputValue = Input.GetAxis(m_MovementAxisName);
+                m_TurnInputValue = Input.GetAxis(m_TurnAxisName);
+            }
+            EngineAudio();
         }
 
 

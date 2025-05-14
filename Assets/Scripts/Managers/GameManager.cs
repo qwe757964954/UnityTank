@@ -47,11 +47,22 @@ namespace Complete
                     Instantiate(m_TankPrefab, m_Tanks[i].m_SpawnPoint.position, m_Tanks[i].m_SpawnPoint.rotation) as GameObject;
                 m_Tanks[i].m_PlayerNumber = i + 1;
                 m_Tanks[i].Setup();
-
+                SetLayerRecursively(m_Tanks[i].m_Instance, 5); // Layer 5 = UI
                 // Assign tags to the tanks
                 if (i == 0)
                 {
                     m_Tanks[i].m_Instance.tag = "Player"; // Tag for Tank 1 (assuming this is the player)
+                    var tankMovement = m_Tanks[i].m_Instance.GetComponent<TankMovement>();
+                    var tankShooting = m_Tanks[i].m_Instance.GetComponent<TankShooting>();
+
+                    if (tankMovement != null)
+                    {
+                        tankMovement.joystick = GameObject.FindObjectOfType<VirtualJoystick>();
+                    }
+                    if (tankShooting != null)
+                    {
+                        tankShooting.attackButton = GameObject.FindObjectOfType<AttackButton>();
+                    }
                 }
                 else if (i == 1)
                 {
@@ -279,6 +290,16 @@ namespace Complete
         public void LoadGameScene()
         {
             SceneManager.LoadScene("Scenes/Tank2"); // 替换为你的主菜单场景名称
+        }
+        private void SetLayerRecursively(GameObject obj, int newLayer)
+        {
+            if (obj == null) return;
+            obj.layer = newLayer;
+            foreach (Transform child in obj.transform)
+            {
+                if (child == null) continue;
+                SetLayerRecursively(child.gameObject, newLayer);
+            }
         }
     }
 }

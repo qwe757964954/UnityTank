@@ -129,7 +129,7 @@ namespace Complete
             {
                 Vector2 randomPoint = Random.insideUnitCircle * patrolRadius.Value;
                 currentTarget = transform.position + new Vector3(randomPoint.x, 0, randomPoint.y);
-                Debug.Log($"New random patrol point: {currentTarget}");
+                // Debug.Log($"New random patrol point: {currentTarget}");
             }
             else
             {
@@ -144,7 +144,7 @@ namespace Complete
             Vector3 retreatDirection = -transform.forward; // Opposite direction
             retreatDirection.y = 0; // Keep it on the same plane
             currentTarget = transform.position + retreatDirection.normalized * retreatDistance.Value;
-            Debug.Log($"Obstacle detected, retreating to: {currentTarget}");
+            // Debug.Log($"Obstacle detected, retreating to: {currentTarget}");
         }
 
         public override void OnEnd()
