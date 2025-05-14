@@ -3,7 +3,15 @@
   "WorkspaceRootPath": "D:\\UnityProj\\UnityTank\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{9B700EE0-FA83-772A-5E5D-F36A1CDE372F}|Assembly-CSharp.csproj|d:\\unityproj\\unitytank\\assets\\scripts\\camera\\cameracontrol.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|d:\\unityproj\\unitytank\\assets\\scripts\\cfxr_effect.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:assets\\scripts\\cfxr_effect.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9B700EE0-FA83-772A-5E5D-F36A1CDE372F}|Assembly-CSharp.csproj|D:\\UnityProj\\UnityTank\\assets\\behavior designer\\runtime\\basic tasks\\network\\isclient.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9B700EE0-FA83-772A-5E5D-F36A1CDE372F}|Assembly-CSharp.csproj|solutionrelative:assets\\behavior designer\\runtime\\basic tasks\\network\\isclient.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9B700EE0-FA83-772A-5E5D-F36A1CDE372F}|Assembly-CSharp.csproj|D:\\UnityProj\\UnityTank\\assets\\scripts\\camera\\cameracontrol.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{9B700EE0-FA83-772A-5E5D-F36A1CDE372F}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\camera\\cameracontrol.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
@@ -19,6 +27,31 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
+              "Title": "CFXR_Effect.cs",
+              "DocumentMoniker": "D:\\UnityProj\\UnityTank\\Assets\\Scripts\\CFXR_Effect.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\CFXR_Effect.cs",
+              "ToolTip": "D:\\UnityProj\\UnityTank\\Assets\\Scripts\\CFXR_Effect.cs",
+              "RelativeToolTip": "Assets\\Scripts\\CFXR_Effect.cs",
+              "ViewState": "AgIAAJIAAAAAAAAAAAAAAMABAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-13T13:00:07.809Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "IsClient.cs",
+              "DocumentMoniker": "D:\\UnityProj\\UnityTank\\Assets\\Behavior Designer\\Runtime\\Basic Tasks\\Network\\IsClient.cs",
+              "RelativeDocumentMoniker": "Assets\\Behavior Designer\\Runtime\\Basic Tasks\\Network\\IsClient.cs",
+              "ToolTip": "D:\\UnityProj\\UnityTank\\Assets\\Behavior Designer\\Runtime\\Basic Tasks\\Network\\IsClient.cs",
+              "RelativeToolTip": "Assets\\Behavior Designer\\Runtime\\Basic Tasks\\Network\\IsClient.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-13T08:15:37.967Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
               "Title": "CameraControl.cs",
               "DocumentMoniker": "D:\\UnityProj\\UnityTank\\Assets\\Scripts\\Camera\\CameraControl.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\Camera\\CameraControl.cs",
@@ -26,8 +59,7 @@
               "RelativeToolTip": "Assets\\Scripts\\Camera\\CameraControl.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-13T07:42:46.203Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-05-13T07:42:46.203Z"
             }
           ]
         }

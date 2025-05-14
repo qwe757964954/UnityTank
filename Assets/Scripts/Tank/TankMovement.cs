@@ -137,5 +137,27 @@ namespace Complete
             // Apply this rotation to the rigidbody's rotation.
             m_Rigidbody.MoveRotation (m_Rigidbody.rotation * turnRotation);
         }
+
+        private void OnCollisionEnter(Collision collision)
+        {
+            // 只处理Player标签的Tank
+            if (gameObject.tag != "Player")
+                return;
+
+            // 检查碰撞对象是否为transmit
+            if (collision.gameObject.tag == "transmit")
+            {
+                // 获取当前场景名
+                string currentScene = UnityEngine.SceneManagement.SceneManager.GetActiveScene().name;
+                if (currentScene == "Tank")
+                {
+                    UnityEngine.SceneManagement.SceneManager.LoadScene("Scenes/Tank2");
+                }
+                else if (currentScene == "Tank2")
+                {
+                    UnityEngine.SceneManagement.SceneManager.LoadScene("Scenes/Tank");
+                }
+            }
+        }
     }
 }
