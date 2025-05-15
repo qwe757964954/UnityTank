@@ -3,11 +3,15 @@
   "WorkspaceRootPath": "D:\\UnityProj\\UnityTank\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{9B700EE0-FA83-772A-5E5D-F36A1CDE372F}|Assembly-CSharp.csproj|d:\\unityproj\\unitytank\\assets\\scripts\\mobilecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9B700EE0-FA83-772A-5E5D-F36A1CDE372F}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\mobilecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{9B700EE0-FA83-772A-5E5D-F36A1CDE372F}|Assembly-CSharp.csproj|d:\\unityproj\\unitytank\\assets\\scripts\\tank\\tankmovement.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{9B700EE0-FA83-772A-5E5D-F36A1CDE372F}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\tank\\tankmovement.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{9B700EE0-FA83-772A-5E5D-F36A1CDE372F}|Assembly-CSharp.csproj|d:\\unityproj\\unitytank\\assets\\boxophobic\\skybox cubemap extended\\core\\shaders\\skybox cubemap extended.shader||{3B902123-F8A7-4915-9F01-361F908088D0}",
+      "AbsoluteMoniker": "D:0:0:{9B700EE0-FA83-772A-5E5D-F36A1CDE372F}|Assembly-CSharp.csproj|D:\\UnityProj\\UnityTank\\assets\\boxophobic\\skybox cubemap extended\\core\\shaders\\skybox cubemap extended.shader||{3B902123-F8A7-4915-9F01-361F908088D0}",
       "RelativeMoniker": "D:0:0:{9B700EE0-FA83-772A-5E5D-F36A1CDE372F}|Assembly-CSharp.csproj|solutionrelative:assets\\boxophobic\\skybox cubemap extended\\core\\shaders\\skybox cubemap extended.shader||{3B902123-F8A7-4915-9F01-361F908088D0}"
     },
     {
@@ -35,19 +39,32 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
+              "Title": "MobileController.cs",
+              "DocumentMoniker": "D:\\UnityProj\\UnityTank\\Assets\\Scripts\\MobileController.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\MobileController.cs",
+              "ToolTip": "D:\\UnityProj\\UnityTank\\Assets\\Scripts\\MobileController.cs",
+              "RelativeToolTip": "Assets\\Scripts\\MobileController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAlAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-15T03:28:57.577Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
               "Title": "TankMovement.cs",
               "DocumentMoniker": "D:\\UnityProj\\UnityTank\\Assets\\Scripts\\Tank\\TankMovement.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\Tank\\TankMovement.cs",
               "ToolTip": "D:\\UnityProj\\UnityTank\\Assets\\Scripts\\Tank\\TankMovement.cs",
               "RelativeToolTip": "Assets\\Scripts\\Tank\\TankMovement.cs",
-              "ViewState": "AgIAACIAAAAAAAAAAAAuwE0AAABBAAAAAAAAAA==",
+              "ViewState": "AgIAACIAAAAAAAAAAAAuwE0AAAAhAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-05-14T09:28:55.377Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 2,
               "Title": "Skybox Cubemap Extended.shader",
               "DocumentMoniker": "D:\\UnityProj\\UnityTank\\Assets\\BOXOPHOBIC\\Skybox Cubemap Extended\\Core\\Shaders\\Skybox Cubemap Extended.shader",
               "RelativeDocumentMoniker": "Assets\\BOXOPHOBIC\\Skybox Cubemap Extended\\Core\\Shaders\\Skybox Cubemap Extended.shader",
@@ -55,12 +72,11 @@
               "RelativeToolTip": "Assets\\BOXOPHOBIC\\Skybox Cubemap Extended\\Core\\Shaders\\Skybox Cubemap Extended.shader",
               "ViewState": "AgIAAAYAAAAAAAAAAABIwAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.002777|",
-              "WhenOpened": "2025-05-14T06:45:02.866Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-05-14T06:45:02.866Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 3,
               "Title": "CFXR_Effect.cs",
               "DocumentMoniker": "D:\\UnityProj\\UnityTank\\Assets\\Scripts\\CFXR_Effect.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\CFXR_Effect.cs",
@@ -71,7 +87,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 4,
               "Title": "IsClient.cs",
               "DocumentMoniker": "D:\\UnityProj\\UnityTank\\Assets\\Behavior Designer\\Runtime\\Basic Tasks\\Network\\IsClient.cs",
               "RelativeDocumentMoniker": "Assets\\Behavior Designer\\Runtime\\Basic Tasks\\Network\\IsClient.cs",
@@ -83,7 +99,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 5,
               "Title": "CameraControl.cs",
               "DocumentMoniker": "D:\\UnityProj\\UnityTank\\Assets\\Scripts\\Camera\\CameraControl.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\Camera\\CameraControl.cs",

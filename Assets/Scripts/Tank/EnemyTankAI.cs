@@ -24,6 +24,7 @@ namespace Complete
         private float backupTimer = 0f; // 后退计时器
         private float backupDuration = 1.5f; // 后退持续时间
         private Vector3 backupDirection; // 后退方向
+        private bool audioLogged = false;  // 用于控制日志输出次数
 
         void Start()
         {
@@ -37,10 +38,74 @@ namespace Complete
             
             // 初始化上次位置
             lastPosition = transform.position;
+            
+            // 确保TankMovement的音频组件被正确设置
+            if (tankMovement != null)
+            {
+                AudioSource[] audioSources = GetComponents<AudioSource>();
+                if (audioSources.Length > 0)
+                {
+                    // 确保第一个音频组件设置正确
+                    audioSources[0].mute = false;
+                    audioSources[0].volume = 0.3f; // 稍微提高音量
+                    audioSources[0].playOnAwake = true;
+                    audioSources[0].loop = true;
+                    
+                    // 确保音频剪辑已设置
+                    if (tankMovement.m_EngineIdling == null || tankMovement.m_EngineDriving == null)
+                    {
+                        // 查找Player坦克获取音频剪辑
+                        GameObject playerTank = GameObject.FindWithTag("Player");
+                        if (playerTank != null)
+                        {
+                            Complete.TankMovement playerMovement = playerTank.GetComponent<Complete.TankMovement>();
+                            if (playerMovement != null)
+                            {
+                                tankMovement.m_EngineIdling = playerMovement.m_EngineIdling;
+                                tankMovement.m_EngineDriving = playerMovement.m_EngineDriving;
+                                Debug.Log("从Player坦克复制了音频剪辑");
+                            }
+                        }
+                    }
+                    
+                    // 强制设置音频源
+                    tankMovement.m_MovementAudio = audioSources[0];
+                    Debug.Log("已为敌方坦克设置移动音效组件: " + 
+                             "引用是否为空=" + (tankMovement.m_MovementAudio == null) + 
+                             ", 静音=" + tankMovement.m_MovementAudio.mute + 
+                             ", 音量=" + tankMovement.m_MovementAudio.volume);
+                }
+                else
+                {
+                    Debug.LogWarning("敌方坦克没有可用的AudioSource组件!");
+                }
+            }
         }
 
         void Update()
         {
+            // 检查音频组件状态（仅在前几帧输出一次）
+            if (!audioLogged && Time.frameCount < 100)
+            {
+                if (tankMovement != null)
+                {
+                    Debug.Log("EnemyTank音频状态: " + 
+                        "MovementAudio=" + (tankMovement.m_MovementAudio != null) + 
+                        ", EngineIdling=" + (tankMovement.m_EngineIdling != null) + 
+                        ", EngineDriving=" + (tankMovement.m_EngineDriving != null));
+                    
+                    if (tankMovement.m_MovementAudio != null)
+                    {
+                        Debug.Log("音频组件详情: " + 
+                            "静音=" + tankMovement.m_MovementAudio.mute + 
+                            ", 音量=" + tankMovement.m_MovementAudio.volume +
+                            ", 当前剪辑=" + (tankMovement.m_MovementAudio.clip != null ? tankMovement.m_MovementAudio.clip.name : "无") +
+                            ", 是否播放=" + tankMovement.m_MovementAudio.isPlaying);
+                    }
+                    audioLogged = true;
+                }
+            }
+
             if (player == null) return;
             float distance = Vector3.Distance(transform.position, player.position);
             switch (currentState)
@@ -149,6 +214,43 @@ namespace Complete
             float turn = Vector3.SignedAngle(transform.forward, dir, Vector3.up) / 45f;
             tankMovement.m_MovementInputValue = Mathf.Clamp(forward, -1f, 1f);
             tankMovement.m_TurnInputValue = Mathf.Clamp(turn, -1f, 1f);
+            
+            // 每5秒检查一次音频状态
+            if (Time.frameCount % 300 == 0) // 假设60fps，大约每5秒检查一次
+            {
+                if (tankMovement.m_MovementAudio != null)
+                {
+                    // 强制播放引擎声音
+                    if (!tankMovement.m_MovementAudio.isPlaying)
+                    {
+                        Debug.LogWarning("引擎声音未播放，尝试强制播放");
+                        tankMovement.m_MovementAudio.Play();
+                    }
+                    
+                    // 输出当前运动信息
+                    Debug.Log("坦克移动状态: " + 
+                        "前进值=" + tankMovement.m_MovementInputValue + 
+                        ", 转向值=" + tankMovement.m_TurnInputValue + 
+                        ", 音频正在播放=" + tankMovement.m_MovementAudio.isPlaying);
+                    
+                    // 手动检查是否应播放行驶声音
+                    if (Mathf.Abs(tankMovement.m_MovementInputValue) > 0.1f || Mathf.Abs(tankMovement.m_TurnInputValue) > 0.1f)
+                    {
+                        if (tankMovement.m_MovementAudio.clip != tankMovement.m_EngineDriving)
+                        {
+                            Debug.Log("切换到行驶声音");
+                            tankMovement.m_MovementAudio.clip = tankMovement.m_EngineDriving;
+                            tankMovement.m_MovementAudio.Play();
+                        }
+                    }
+                    else if (tankMovement.m_MovementAudio.clip != tankMovement.m_EngineIdling)
+                    {
+                        Debug.Log("切换到怠速声音");
+                        tankMovement.m_MovementAudio.clip = tankMovement.m_EngineIdling;
+                        tankMovement.m_MovementAudio.Play();
+                    }
+                }
+            }
         }
 
         void SetNewPatrolTarget()

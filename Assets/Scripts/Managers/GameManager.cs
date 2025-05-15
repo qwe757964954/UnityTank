@@ -47,11 +47,12 @@ namespace Complete
                     Instantiate(m_TankPrefab, m_Tanks[i].m_SpawnPoint.position, m_Tanks[i].m_SpawnPoint.rotation) as GameObject;
                 m_Tanks[i].m_PlayerNumber = i + 1;
                 m_Tanks[i].Setup();
-                SetLayerRecursively(m_Tanks[i].m_Instance, 5); // Layer 5 = UI
+                
                 // Assign tags to the tanks
                 if (i == 0)
                 {
                     m_Tanks[i].m_Instance.tag = "Player"; // Tag for Tank 1 (assuming this is the player)
+                    SetLayerRecursively(m_Tanks[i].m_Instance, 9); // 设置为 Players 层（第8层）以便相机能渲染
                     var tankMovement = m_Tanks[i].m_Instance.GetComponent<TankMovement>();
                     var tankShooting = m_Tanks[i].m_Instance.GetComponent<TankShooting>();
 

@@ -4,129 +4,155 @@ namespace Complete
 {
     public class CameraControl : MonoBehaviour
     {
-        public float m_DampTime = 0.2f;                 // Approximate time for the camera to refocus.
-        public float m_ScreenEdgeBuffer = 4f;           // Space between the top/bottom most target and the screen edge.
-        public float m_MinSize = 6.5f;                  // The smallest orthographic size the camera can be.
-        [HideInInspector] public Transform[] m_Targets; // All the targets the camera needs to encompass.
+        public float m_DampTime = 0.2f;                 
+        public float m_ScreenEdgeBuffer = 4f;           
+        public float m_MinSize = 6.5f;                  
+        [HideInInspector] public Transform[] m_Targets;
 
+        // 摄像机设置
+        public float m_CameraHeight = 25f;              // 摄像机高度
+        public float m_FOV = 60f;                       // 视野范围
+        public float m_MinZoom = 5f;                    // 最小缩放
+        public float m_MaxZoom = 15f;                   // 最大缩放
+        public LayerMask m_CollisionLayers;             // 碰撞层
 
-        private Camera m_Camera;                        // Used for referencing the camera.
-        private float m_ZoomSpeed;                      // Reference speed for the smooth damping of the orthographic size.
-        private Vector3 m_MoveVelocity;                 // Reference velocity for the smooth damping of the position.
-        private Vector3 m_DesiredPosition;              // The position the camera is moving towards.
+        // 角度设置
+        public float m_CameraPitch = 65f;               // 相机俯仰角度（60度俯视）
+        public float m_CameraYaw = 0f;                  // 相机水平旋转角度
 
+        private Camera m_Camera;                        
+        private float m_ZoomSpeed;                      
+        private Vector3 m_MoveVelocity;                 
+        private Vector3 m_DesiredPosition;              
 
-        private void Awake ()
+        private void Awake()
         {
-            m_Camera = GetComponentInChildren<Camera> ();
+            m_Camera = GetComponentInChildren<Camera>();
+            if (m_Camera == null)
+                m_Camera = Camera.main;
+                
+            // 确保摄像机设置正确
+            m_Camera.fieldOfView = m_FOV;
         }
 
-
-        private void FixedUpdate ()
+        private void Start()
         {
-            // Move the camera towards a desired position.
-            Move ();
-
-            // Change the size of the camera based.
-            Zoom ();
+            // 立即设置初始位置和朝向
+            SetStartPositionAndSize();
         }
 
-
-        private void Move ()
+        private void FixedUpdate()
         {
-            // Find the average position of the targets.
-            FindAveragePosition ();
-
-            // Smoothly transition to that position.
-            transform.position = Vector3.SmoothDamp(transform.position, m_DesiredPosition, ref m_MoveVelocity, m_DampTime);
+            Move();
+            Zoom();
         }
 
-
-        private void FindAveragePosition ()
+        private void Move()
         {
-            Vector3 averagePos = new Vector3 ();
+            // 找到所有目标的平均位置
+            FindAveragePosition();
+            
+            // 计算摄像机的目标位置
+            Vector3 targetPosition = CalculateCameraPosition();
+            
+            // 平滑移动到目标位置
+            transform.position = Vector3.SmoothDamp(transform.position, targetPosition, ref m_MoveVelocity, m_DampTime);
+            
+            // 设置摄像机旋转 - 斜视角
+            transform.rotation = Quaternion.Euler(m_CameraPitch, m_CameraYaw, 0f);
+        }
+
+        private Vector3 CalculateCameraPosition()
+        {
+            // 根据角度计算位置偏移
+            float pitch = m_CameraPitch * Mathf.Deg2Rad;
+            float yaw = m_CameraYaw * Mathf.Deg2Rad;
+            
+            // 计算相对位置（考虑旋转角度）
+            float xOffset = -Mathf.Sin(yaw) * m_CameraHeight * Mathf.Cos(pitch);
+            float zOffset = -Mathf.Cos(yaw) * m_CameraHeight * Mathf.Cos(pitch);
+            float yOffset = m_CameraHeight * Mathf.Sin(pitch);
+            
+            // 计算最终相机位置
+            return new Vector3(
+                m_DesiredPosition.x + xOffset,
+                m_DesiredPosition.y + yOffset,
+                m_DesiredPosition.z + zOffset
+            );
+        }
+
+        private void FindAveragePosition()
+        {
+            Vector3 averagePos = new Vector3();
             int numTargets = 0;
-
-            // Go through all the targets and add their positions together.
+            
+            // 计算所有活动目标的平均位置
             for (int i = 0; i < m_Targets.Length; i++)
             {
-                // If the target isn't active, go on to the next one.
                 if (!m_Targets[i].gameObject.activeSelf)
                     continue;
-
-                // Add to the average and increment the number of targets in the average.
+                    
                 averagePos += m_Targets[i].position;
                 numTargets++;
             }
-
-            // If there are targets divide the sum of the positions by the number of them to find the average.
+            
             if (numTargets > 0)
                 averagePos /= numTargets;
-
-            // Keep the same y value.
-            averagePos.y = transform.position.y;
-
-            // The desired position is the average position;
+                
+            // 保存平均位置
             m_DesiredPosition = averagePos;
         }
 
-
-        private void Zoom ()
+        private void Zoom()
         {
-            // Find the required size based on the desired position and smoothly transition to that size.
+            // 计算所需的缩放大小
             float requiredSize = FindRequiredSize();
-            m_Camera.orthographicSize = Mathf.SmoothDamp (m_Camera.orthographicSize, requiredSize, ref m_ZoomSpeed, m_DampTime);
+            
+            // 调整摄像机高度作为缩放方式
+            float targetHeight = Mathf.Clamp(requiredSize * 2f, m_MinZoom, m_MaxZoom);
+            m_CameraHeight = Mathf.SmoothDamp(m_CameraHeight, targetHeight, ref m_ZoomSpeed, m_DampTime);
         }
 
-
-        private float FindRequiredSize ()
+        private float FindRequiredSize()
         {
-            // Find the position the camera rig is moving towards in its local space.
-            Vector3 desiredLocalPos = transform.InverseTransformPoint(m_DesiredPosition);
-
-            // Start the camera's size calculation at zero.
+            // 找到需要包含所有目标的视野大小
             float size = 0f;
-
-            // Go through all the targets...
+            
             for (int i = 0; i < m_Targets.Length; i++)
             {
-                // ... and if they aren't active continue on to the next target.
                 if (!m_Targets[i].gameObject.activeSelf)
                     continue;
-
-                // Otherwise, find the position of the target in the camera's local space.
-                Vector3 targetLocalPos = transform.InverseTransformPoint(m_Targets[i].position);
-
-                // Find the position of the target from the desired position of the camera's local space.
-                Vector3 desiredPosToTarget = targetLocalPos - desiredLocalPos;
-
-                // Choose the largest out of the current size and the distance of the tank 'up' or 'down' from the camera.
-                size = Mathf.Max(size, Mathf.Abs(desiredPosToTarget.y));
-
-                // Choose the largest out of the current size and the calculated size based on the tank being to the left or right of the camera.
-                size = Mathf.Max(size, Mathf.Abs(desiredPosToTarget.x) / m_Camera.aspect);
+                    
+                // 计算从目标中心到当前目标的向量
+                Vector3 targetVector = m_Targets[i].position - m_DesiredPosition;
+                
+                // 计算水平距离
+                float distance = new Vector2(targetVector.x, targetVector.z).magnitude;
+                
+                // 找到最大所需视野大小
+                size = Mathf.Max(size, distance);
             }
-
-            // Add the edge buffer to the size.
+            
+            // 添加边缘缓冲
             size += m_ScreenEdgeBuffer;
-
-            // Make sure the camera's size isn't below the minimum.
-            size = Mathf.Max (size, m_MinSize);
-
+            size = Mathf.Max(size, m_MinSize);
+            
             return size;
         }
 
-
-        public void SetStartPositionAndSize ()
+        public void SetStartPositionAndSize()
         {
-            // Find the desired position.
-            FindAveragePosition ();
-
-            // Set the camera's position to the desired position without damping.
-            transform.position = m_DesiredPosition;
-
-            // Find and set the required size of the camera.
-            m_Camera.orthographicSize = FindRequiredSize ();
+            // 找到目标平均位置
+            FindAveragePosition();
+            
+            // 设置摄像机位置
+            transform.position = CalculateCameraPosition();
+            
+            // 设置摄像机旋转
+            transform.rotation = Quaternion.Euler(m_CameraPitch, m_CameraYaw, 0f);
+            
+            // 设置摄像机FOV
+            m_Camera.fieldOfView = m_FOV;
         }
     }
 }

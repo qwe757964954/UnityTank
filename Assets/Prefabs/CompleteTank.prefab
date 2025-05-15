@@ -10481,7 +10481,7 @@ AudioSource:
   MinDistance: 1
   MaxDistance: 500
   Pan2D: 0
-  rolloffMode: 0
+  rolloffMode: 1
   BypassEffects: 0
   BypassListenerEffects: 0
   BypassReverbZones: 0
@@ -10578,7 +10578,7 @@ AudioSource:
   MinDistance: 1
   MaxDistance: 500
   Pan2D: 0
-  rolloffMode: 0
+  rolloffMode: 1
   BypassEffects: 0
   BypassListenerEffects: 0
   BypassReverbZones: 0
@@ -10670,6 +10670,9 @@ MonoBehaviour:
   m_EngineIdling: {fileID: 8300000, guid: 4932ab25b84dd7649b80af68a9660ddc, type: 3}
   m_EngineDriving: {fileID: 8300000, guid: d7ca9fb5aa30155449192b23d7fb3336, type: 3}
   m_PitchRange: 0.1
+  m_MovementInputValue: 0
+  m_TurnInputValue: 0
+  joystick: {fileID: 0}
 --- !u!114 &11409376
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10710,6 +10713,8 @@ MonoBehaviour:
   m_MinLaunchForce: 15
   m_MaxLaunchForce: 30
   m_MaxChargeTime: 0.75
+  m_FireButton: 
+  attackButton: {fileID: 0}
 --- !u!1 &173936
 GameObject:
   m_ObjectHideFlags: 0
