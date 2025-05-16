@@ -235,11 +235,11 @@ namespace CartoonFX
 				ResetCam();
 			}
 
-			float scroll = Input.GetAxis("Mouse ScrollWheel");
-			if (scroll != 0f)
-			{
-				Camera.main.transform.Translate(Vector3.forward * (scroll < 0f ? -1f : 1f) * zoomFactor, Space.Self);
-			}
+			// float scroll = Input.GetAxis("Mouse ScrollWheel");
+			// if (scroll != 0f)
+			// {
+			// 	Camera.main.transform.Translate(Vector3.forward * (scroll < 0f ? -1f : 1f) * zoomFactor, Space.Self);
+			// }
 		}
 
 		public void PlayAtIndex()

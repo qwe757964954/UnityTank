@@ -75,7 +75,6 @@ namespace Complete
             {
                 mDataSourceMgr = PropManager.Instance.GetDataSource();
             }
-            
             // 如果没有道具，创建一个空数据源
             if (mDataSourceMgr == null || mDataSourceMgr.TotalItemCount == 0)
             {

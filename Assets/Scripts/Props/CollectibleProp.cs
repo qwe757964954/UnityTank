@@ -9,29 +9,8 @@ namespace Complete
         public string spriteName;       // 对应的Sprite资源名
         public string description;      // 道具描述
         
-        private void OnCollisionEnter(Collision collision)
-        {
-            // 检查是否被坦克碰撞
-            if (collision.gameObject.CompareTag("Player"))
-            {
-                // 创建道具数据
-                PropItem prop = new PropItem(
-                    propId,
-                    propName,
-                    spriteName,
-                    description
-                );
-                
-                // 添加到背包
-                PropManager.Instance.AddProp(prop);
-                
-                // 播放收集效果
-                PlayCollectEffect();
-                
-                // 销毁道具对象
-                Destroy(gameObject);
-            }
-        }
+        // OnCollisionEnter方法已移除，因为在TankMovement中已经处理了碰撞逻辑
+        // 这样避免收集一个道具却添加两次到背包的问题
         
         private void PlayCollectEffect()
         {

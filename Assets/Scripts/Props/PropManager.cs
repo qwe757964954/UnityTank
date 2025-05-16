@@ -80,6 +80,18 @@ namespace Complete
         // 添加道具到背包
         public void AddProp(PropItem prop)
         {
+            Debug.Log($"[PropManager] 添加道具: {prop.propName}, ID: {prop.id}");
+            
+            // 检查是否已经存在相同ID的道具，避免重复添加
+            bool isDuplicate = collectedProps.Any(p => p.id == prop.id);
+            
+            if (isDuplicate)
+            {
+                Debug.Log($"[PropManager] 道具已存在，忽略重复添加: {prop.propName}, ID: {prop.id}");
+                // return;
+            }
+            
+            // 添加新道具
             collectedProps.Add(prop);
             SavePropsToLocal(); // 保存到本地
             
@@ -113,7 +125,6 @@ namespace Complete
                     _dataSourceMgr.AppendData(itemData);
                 }
             }
-            
             return _dataSourceMgr;
         }
         
