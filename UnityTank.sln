@@ -11,6 +11,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Boxophobic.Utils.Scripts", 
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Boxophobic.Utils.Editor", "Boxophobic.Utils.Editor.csproj", "{8a111682-db22-7177-a8e3-bb9378e8aab2}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Assembly-CSharp-firstpass", "Assembly-CSharp-firstpass.csproj", "{601b6001-60bc-ca57-0f86-2c82a08b889a}"
+EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Boxophobic.SkyboxCubemapExtended.Editor", "Boxophobic.SkyboxCubemapExtended.Editor.csproj", "{3458584a-f19c-7f19-5251-378205c2361b}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CFXRRuntime", "CFXRRuntime.csproj", "{f1e264d7-1903-809c-5f25-aa1464248b24}"
@@ -20,6 +22,8 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KinoBloom.Runtime", "KinoBloom.Runtime.csproj", "{ba713a24-048b-e81d-805b-41f6a43ee67e}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ToonyColorsPro.Demo.Editor", "ToonyColorsPro.Demo.Editor.csproj", "{fb4cda02-9d3b-95fb-97ee-23c87675d77a}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Assembly-CSharp-Editor-firstpass", "Assembly-CSharp-Editor-firstpass.csproj", "{a6954a71-0c0e-d26a-3d3f-317243de1466}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CFXR.WelcomeScreen", "CFXR.WelcomeScreen.csproj", "{c1fcaed4-0290-831b-5c17-7b12536f711a}"
 EndProject
@@ -38,6 +42,8 @@ Global
 		{8d65bb29-e278-6232-f1ae-5c82b520d82b}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8a111682-db22-7177-a8e3-bb9378e8aab2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{8a111682-db22-7177-a8e3-bb9378e8aab2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{601b6001-60bc-ca57-0f86-2c82a08b889a}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{601b6001-60bc-ca57-0f86-2c82a08b889a}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3458584a-f19c-7f19-5251-378205c2361b}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{3458584a-f19c-7f19-5251-378205c2361b}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{f1e264d7-1903-809c-5f25-aa1464248b24}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
@@ -48,6 +54,8 @@ Global
 		{ba713a24-048b-e81d-805b-41f6a43ee67e}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{fb4cda02-9d3b-95fb-97ee-23c87675d77a}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{fb4cda02-9d3b-95fb-97ee-23c87675d77a}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{a6954a71-0c0e-d26a-3d3f-317243de1466}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{a6954a71-0c0e-d26a-3d3f-317243de1466}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{c1fcaed4-0290-831b-5c17-7b12536f711a}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{c1fcaed4-0290-831b-5c17-7b12536f711a}.Debug|Any CPU.Build.0 = Debug|Any CPU
 	EndGlobalSection
