@@ -173,6 +173,7 @@
     <Compile Include="Assets\Behavior Designer\Runtime\Basic Tasks\NavMeshAgent\GetRemainingDistance.cs" />
     <Compile Include="Assets\Behavior Designer\Runtime\Basic Tasks\String\CompareTo.cs" />
     <Compile Include="Assets\Behavior Designer\Runtime\Basic Tasks\Transform\FindChild.cs" />
+    <Compile Include="Assets\Scripts\Canvas\PackageView.cs" />
     <Compile Include="Assets\Behavior Designer\Runtime\Variables\SharedAnimationCurve.cs" />
     <Compile Include="Assets\Behavior Designer\Runtime\Basic Tasks\Rigidbody\IsKinematic.cs" />
     <Compile Include="Assets\Behavior Designer\Runtime\Basic Tasks\ParticleSystem\SetStartColor.cs" />
@@ -254,6 +255,7 @@
     <Compile Include="Assets\Behavior Designer\Runtime\Composites\RandomSequence.cs" />
     <Compile Include="Assets\Behavior Designer\Runtime\Conditionals\Reflection\ComparePropertyValue.cs" />
     <Compile Include="Assets\Behavior Designer\Runtime\Basic Tasks\Animation\IsPlaying.cs" />
+    <Compile Include="Assets\Scripts\Props\CollectibleProp.cs" />
     <Compile Include="Assets\Behavior Designer\Runtime\Basic Tasks\Light\SetShadows.cs" />
     <Compile Include="Assets\Behavior Designer\Runtime\Basic Tasks\Rigidbody\SetAngularVelocity.cs" />
     <Compile Include="Assets\Behavior Designer\Runtime\Basic Tasks\NavMeshAgent\GetDestination.cs" />
@@ -280,12 +282,14 @@
     <Compile Include="Assets\Behavior Designer\Runtime\Basic Tasks\Vector3\RotateTowards.cs" />
     <Compile Include="Assets\Behavior Designer\Runtime\Basic Tasks\AudioSource\SetScheduledStartTime.cs" />
     <Compile Include="Assets\SuperScrollView\Demo\Scripts\ButtonPanel\ButtonPanelTreeViewSticky.cs" />
+    <Compile Include="Assets\Scripts\Props\PropResManager.cs" />
     <Compile Include="Assets\SuperScrollView\Demo\Scripts\Item\ChatViewItem.cs" />
     <Compile Include="Assets\Behavior Designer\Runtime\Basic Tasks\Animator\StartPlayback.cs" />
     <Compile Include="Assets\Behavior Designer\Runtime\Basic Tasks\PlayerPrefs\DeleteKey.cs" />
     <Compile Include="Assets\SuperScrollView\Demo\Scripts\Item\PageViewItem.cs" />
     <Compile Include="Assets\Behavior Designer\Runtime\Basic Tasks\Time\SetTimeScale.cs" />
     <Compile Include="Assets\Behavior Designer\Runtime\Basic Tasks\Quaternion\Euler.cs" />
+    <Compile Include="Assets\Scripts\Props\PropManager.cs" />
     <Compile Include="Assets\SuperScrollView\Demo\Scripts\ViewDemo\ListViewAnimation\ListViewAddAnimationDemoScript.cs" />
     <Compile Include="Assets\Behavior Designer\Runtime\Basic Tasks\ParticleSystem\SetStartSize.cs" />
     <Compile Include="Assets\Behavior Designer\Runtime\Basic Tasks\AudioSource\SetPanLevel.cs" />
@@ -380,6 +384,7 @@
     <Compile Include="Assets\Behavior Designer\Runtime\Basic Tasks\Transform\SetParent.cs" />
     <Compile Include="Assets\Behavior Designer\Runtime\Basic Tasks\SharedVariables\CompareSharedVector4.cs" />
     <Compile Include="Assets\Behavior Designer\Runtime\Basic Tasks\NavMeshAgent\SetAcceleration.cs" />
+    <Compile Include="Assets\Scripts\Props\PropItem.cs" />
     <Compile Include="Assets\Behavior Designer\Runtime\Basic Tasks\Transform\SetEulerAngles.cs" />
     <Compile Include="Assets\SuperScrollView\Scripts\GridView\LoopGridView.cs" />
     <Compile Include="Assets\Behavior Designer\Runtime\Basic Tasks\Vector3\GetForwardVector.cs" />
@@ -408,6 +413,7 @@
     <Compile Include="Assets\Behavior Designer\Runtime\Basic Tasks\AudioSource\SetTime.cs" />
     <Compile Include="Assets\Behavior Designer\Runtime\Variables\SharedVector3.cs" />
     <Compile Include="Assets\Joystick Pack\Examples\JoystickPlayerExample.cs" />
+    <Compile Include="Assets\BTM_Assets\BTM_Items_Gems\Scripts\SimpleGemsAnim.cs" />
     <Compile Include="Assets\SuperScrollView\Demo\Scripts\ButtonPanel\ButtonPanelGridViewDelete.cs" />
     <Compile Include="Assets\Behavior Designer\Runtime\Basic Tasks\Transform\GetForwardVector.cs" />
     <Compile Include="Assets\Behavior Designer\Runtime\Basic Tasks\Rigidbody2D\AddForce.cs" />
@@ -609,6 +615,7 @@
     <Compile Include="Assets\Behavior Designer\Runtime\Basic Tasks\Rigidbody2D\IsSleeping.cs" />
     <Compile Include="Assets\Behavior Designer\Runtime\Basic Tasks\SharedVariables\CompareSharedObjectList.cs" />
     <Compile Include="Assets\Behavior Designer\Runtime\Basic Tasks\NavMeshAgent\SetIsStopped.cs" />
+    <Compile Include="Assets\Scripts\Canvas\SceneCanvas.cs" />
     <Compile Include="Assets\SuperScrollView\Demo\Scripts\ViewDemo\Chat\ChatViewDemoScript.cs" />
     <Compile Include="Assets\Behavior Designer\Runtime\Variables\SharedGameObjectList.cs" />
     <Compile Include="Assets\Behavior Designer\Runtime\Basic Tasks\Math\FloatAbs.cs" />

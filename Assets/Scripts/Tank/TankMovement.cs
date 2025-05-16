@@ -415,6 +415,58 @@ namespace Complete
                     UnityEngine.SceneManagement.SceneManager.LoadScene("Scenes/Tank");
                 }
             }
+            
+            // 检查碰撞对象是否在Props层
+            if (collision.gameObject.layer == LayerMask.NameToLayer("Props"))
+            {
+                // 尝试获取CollectibleProp组件
+                CollectibleProp prop = collision.gameObject.GetComponent<CollectibleProp>();
+                if (prop != null)
+                {
+                    // 创建道具数据
+                    PropItem propItem = new PropItem(
+                        prop.propId,
+                        prop.propName,
+                        prop.spriteName,
+                        prop.description
+                    );
+                    
+                    // 添加到背包管理器
+                    PropManager.Instance.AddProp(propItem);
+                    
+                    // 销毁道具对象
+                    Destroy(collision.gameObject);
+                    
+                    // 输出日志
+                    Debug.Log($"坦克收集了道具: {prop.propName}");
+                }
+                else
+                {
+                    // 如果没有CollectibleProp组件，但仍然在Props层，也视为可收集物品
+                    string propName = collision.gameObject.name;
+                    string propId = System.Guid.NewGuid().ToString();
+                    string spriteName = "DefaultProp"; // 默认资源名
+                    
+                    // 尝试从对象名称中提取资源名
+                    if (propName.Contains("_"))
+                    {
+                        string[] parts = propName.Split('_');
+                        if (parts.Length > 1)
+                        {
+                            spriteName = parts[1];
+                        }
+                    }
+                    
+                    PropItem propItem = new PropItem(propId, propName, spriteName, "自动收集的道具");
+                    PropManager.Instance.AddProp(propItem);
+                    
+                    // 销毁道具对象
+                    Destroy(collision.gameObject);
+                    
+                    // 输出日志
+                    Debug.Log($"坦克收集了自动识别的道具: {propName}");
+                }
+            }
         }
     }
 }
