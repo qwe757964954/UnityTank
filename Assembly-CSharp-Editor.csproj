@@ -958,6 +958,10 @@
       <Project>{a6954a71-0c0e-d26a-3d3f-317243de1466}</Project>
       <Name>Assembly-CSharp-Editor-firstpass</Name>
     </ProjectReference>
+    <ProjectReference Include="UniTask.Addressables.csproj">
+      <Project>{bd52ba3f-49de-6870-9cbb-98b6a46087e4}</Project>
+      <Name>UniTask.Addressables</Name>
+    </ProjectReference>
     <ProjectReference Include="Boxophobic.Utils.Scripts.csproj">
       <Project>{8d65bb29-e278-6232-f1ae-5c82b520d82b}</Project>
       <Name>Boxophobic.Utils.Scripts</Name>
@@ -974,9 +978,21 @@
       <Project>{f1e264d7-1903-809c-5f25-aa1464248b24}</Project>
       <Name>CFXRRuntime</Name>
     </ProjectReference>
+    <ProjectReference Include="UniTask.csproj">
+      <Project>{ec817e17-adf6-e794-5363-80dd964c71b2}</Project>
+      <Name>UniTask</Name>
+    </ProjectReference>
     <ProjectReference Include="CFXRDemo.csproj">
       <Project>{e3fe95b5-ad36-0d9c-970b-d3c8e3ed2df3}</Project>
       <Name>CFXRDemo</Name>
+    </ProjectReference>
+    <ProjectReference Include="UniTask.TextMeshPro.csproj">
+      <Project>{e6a5fbd1-0912-d6ac-95d0-fb2fd45d0c2c}</Project>
+      <Name>UniTask.TextMeshPro</Name>
+    </ProjectReference>
+    <ProjectReference Include="UniTask.Linq.csproj">
+      <Project>{c2067037-231e-1dcd-d20d-3caa5a1ae3ea}</Project>
+      <Name>UniTask.Linq</Name>
     </ProjectReference>
     <ProjectReference Include="CFXR.WelcomeScreen.csproj">
       <Project>{c1fcaed4-0290-831b-5c17-7b12536f711a}</Project>
@@ -993,6 +1009,10 @@
     <ProjectReference Include="Boxophobic.Utils.Editor.csproj">
       <Project>{8a111682-db22-7177-a8e3-bb9378e8aab2}</Project>
       <Name>Boxophobic.Utils.Editor</Name>
+    </ProjectReference>
+    <ProjectReference Include="UniTask.DOTween.csproj">
+      <Project>{5de403b4-1fee-9f1f-d8ef-536a77140a14}</Project>
+      <Name>UniTask.DOTween</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

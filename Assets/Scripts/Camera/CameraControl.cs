@@ -17,9 +17,9 @@ namespace Complete
         public LayerMask m_CollisionLayers;             // 碰撞层
 
         // 角度设置
-        public float m_CameraPitch = 65f;               // 相机俯仰角度（60度俯视）
+        public float m_CameraPitch = 0f;               // 相机俯仰角度（60度俯视）
         public float m_CameraYaw = 0f;                  // 相机水平旋转角度
-
+    
         private Camera m_Camera;                        
         private float m_ZoomSpeed;                      
         private Vector3 m_MoveVelocity;                 

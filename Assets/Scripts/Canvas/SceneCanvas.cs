@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using Complete;
+using DG.Tweening; // 添加 DOTween 命名空间
 
 public class SceneCanvas : MonoBehaviour
 {
@@ -38,23 +39,45 @@ public class SceneCanvas : MonoBehaviour
         if (clearPkg != null)
             clearPkg.onClick.AddListener(ClearBackpack);
     }
+
+    private void OnDestroy()
+    {
+        // 当组件被销毁时，停止相关的所有 DOTween 动画
+        if (scrollViewRectTransform != null)
+        {
+            scrollViewRectTransform.DOKill();
+        }
+    }
     
     // 打开背包
     public void OpenBackpack()
     {
+        // 确保先停止之前的动画
+        scrollViewRectTransform.DOKill();
+        
         ScrollViewRoot.SetActive(true);
         
         // 从右侧滑入
-        StartCoroutine(AnimateScrollView(showPosition + hidePosition, showPosition));
+        scrollViewRectTransform.anchoredPosition = showPosition + hidePosition;
+        scrollViewRectTransform.DOAnchorPos(showPosition, animationDuration)
+            .SetEase(Ease.OutBack) // 添加一点回弹效果
+            .OnComplete(() => {
+                // 动画完成后的回调
+            });
     }
     
     // 关闭背包
     public void CloseBackpack()
     {
+        // 确保先停止之前的动画
+        scrollViewRectTransform.DOKill();
+        
         // 滑出到右侧
-        StartCoroutine(AnimateScrollView(showPosition, showPosition + hidePosition, () => {
-            ScrollViewRoot.SetActive(false);
-        }));
+        scrollViewRectTransform.DOAnchorPos(showPosition + hidePosition, animationDuration)
+            .SetEase(Ease.InBack) // 添加一点回弹效果
+            .OnComplete(() => {
+                ScrollViewRoot.SetActive(false);
+            });
     }
     
     // 清空背包数据
@@ -75,26 +98,6 @@ public class SceneCanvas : MonoBehaviour
         }
     }
     
-    // 滑动动画协程
-    private IEnumerator AnimateScrollView(Vector2 startPos, Vector2 endPos, System.Action onComplete = null)
-    {
-        float elapsedTime = 0;
-        
-        while (elapsedTime < animationDuration)
-        {
-            scrollViewRectTransform.anchoredPosition = Vector2.Lerp(startPos, endPos, elapsedTime / animationDuration);
-            elapsedTime += Time.deltaTime;
-            yield return null;
-        }
-        
-        // 确保最终位置精确
-        scrollViewRectTransform.anchoredPosition = endPos;
-        
-        // 执行完成回调
-        if (onComplete != null)
-            onComplete();
-    }
-
     // Update is called once per frame
     void Update()
     {
