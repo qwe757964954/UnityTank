@@ -389,11 +389,17 @@
     <Reference Include="DOTween">
       <HintPath>D:\UnityProj\UnityTank\Assets\Plugins\Demigiant\DOTween\DOTween.dll</HintPath>
     </Reference>
+    <Reference Include="dnlib">
+      <HintPath>D:\UnityProj\UnityTank\Library\PackageCache\com.code-philosophy.hybridclr@7a0032934b\Plugins\dnlib.dll</HintPath>
+    </Reference>
     <Reference Include="Unity.VisualScripting.Antlr3.Runtime">
       <HintPath>D:\UnityProj\UnityTank\Library\PackageCache\com.unity.visualscripting@1.9.4\Runtime\VisualScripting.Flow\Dependencies\NCalc\Unity.VisualScripting.Antlr3.Runtime.dll</HintPath>
     </Reference>
     <Reference Include="DOTweenPro">
       <HintPath>D:\UnityProj\UnityTank\Assets\Plugins\Demigiant\DOTweenPro\DOTweenPro.dll</HintPath>
+    </Reference>
+    <Reference Include="LZ4">
+      <HintPath>D:\UnityProj\UnityTank\Library\PackageCache\com.code-philosophy.hybridclr@7a0032934b\Plugins\LZ4.dll</HintPath>
     </Reference>
     <Reference Include="BehaviorDesignerRuntime">
       <HintPath>D:\UnityProj\UnityTank\Assets\Behavior Designer\Runtime\BehaviorDesignerRuntime.dll</HintPath>
@@ -806,6 +812,9 @@
     <Reference Include="UnityEngine.TestRunner">
       <HintPath>D:\UnityProj\UnityTank\Library\ScriptAssemblies\UnityEngine.TestRunner.dll</HintPath>
     </Reference>
+    <Reference Include="HybridCLR.Runtime">
+      <HintPath>D:\UnityProj\UnityTank\Library\ScriptAssemblies\HybridCLR.Runtime.dll</HintPath>
+    </Reference>
     <Reference Include="Unity.RenderPipelines.Core.Runtime">
       <HintPath>D:\UnityProj\UnityTank\Library\ScriptAssemblies\Unity.RenderPipelines.Core.Runtime.dll</HintPath>
     </Reference>
@@ -814,6 +823,9 @@
     </Reference>
     <Reference Include="Unity.Burst.Editor">
       <HintPath>D:\UnityProj\UnityTank\Library\ScriptAssemblies\Unity.Burst.Editor.dll</HintPath>
+    </Reference>
+    <Reference Include="HybridCLR.Editor">
+      <HintPath>D:\UnityProj\UnityTank\Library\ScriptAssemblies\HybridCLR.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Networking.Transport">
       <HintPath>D:\UnityProj\UnityTank\Library\ScriptAssemblies\Unity.Networking.Transport.dll</HintPath>
