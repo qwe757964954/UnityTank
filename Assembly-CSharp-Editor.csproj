@@ -863,11 +863,11 @@
     <Reference Include="Unity.Netcode.Runtime">
       <HintPath>D:\UnityProj\UnityTank\Library\ScriptAssemblies\Unity.Netcode.Runtime.dll</HintPath>
     </Reference>
-    <Reference Include="Unity.PlasticSCM.Editor">
-      <HintPath>D:\UnityProj\UnityTank\Library\ScriptAssemblies\Unity.PlasticSCM.Editor.dll</HintPath>
-    </Reference>
     <Reference Include="Unity.Netcode.Editor.PackageChecker">
       <HintPath>D:\UnityProj\UnityTank\Library\ScriptAssemblies\Unity.Netcode.Editor.PackageChecker.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.PlasticSCM.Editor">
+      <HintPath>D:\UnityProj\UnityTank\Library\ScriptAssemblies\Unity.PlasticSCM.Editor.dll</HintPath>
     </Reference>
     <Reference Include="PPv2URPConverters">
       <HintPath>D:\UnityProj\UnityTank\Library\ScriptAssemblies\PPv2URPConverters.dll</HintPath>
@@ -890,17 +890,17 @@
     <Reference Include="Unity.Burst">
       <HintPath>D:\UnityProj\UnityTank\Library\ScriptAssemblies\Unity.Burst.dll</HintPath>
     </Reference>
-    <Reference Include="Unity.Timeline.Editor">
-      <HintPath>D:\UnityProj\UnityTank\Library\ScriptAssemblies\Unity.Timeline.Editor.dll</HintPath>
-    </Reference>
     <Reference Include="Unity.VisualScripting.Shared.Editor">
       <HintPath>D:\UnityProj\UnityTank\Library\ScriptAssemblies\Unity.VisualScripting.Shared.Editor.dll</HintPath>
     </Reference>
-    <Reference Include="Unity.ShaderGraph.Editor">
-      <HintPath>D:\UnityProj\UnityTank\Library\ScriptAssemblies\Unity.ShaderGraph.Editor.dll</HintPath>
+    <Reference Include="Unity.Timeline.Editor">
+      <HintPath>D:\UnityProj\UnityTank\Library\ScriptAssemblies\Unity.Timeline.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.VisualStudio.Editor">
       <HintPath>D:\UnityProj\UnityTank\Library\ScriptAssemblies\Unity.VisualStudio.Editor.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.ShaderGraph.Editor">
+      <HintPath>D:\UnityProj\UnityTank\Library\ScriptAssemblies\Unity.ShaderGraph.Editor.dll</HintPath>
     </Reference>
     <Reference Include="UnityEditor.UI">
       <HintPath>D:\UnityProj\UnityTank\Library\ScriptAssemblies\UnityEditor.UI.dll</HintPath>
@@ -974,6 +974,10 @@
       <Project>{bd52ba3f-49de-6870-9cbb-98b6a46087e4}</Project>
       <Name>UniTask.Addressables</Name>
     </ProjectReference>
+    <ProjectReference Include="Timeline.Samples.Video.Editor.csproj">
+      <Project>{a6e5ee94-85b4-2077-7535-47491a5fbac9}</Project>
+      <Name>Timeline.Samples.Video.Editor</Name>
+    </ProjectReference>
     <ProjectReference Include="Boxophobic.Utils.Scripts.csproj">
       <Project>{8d65bb29-e278-6232-f1ae-5c82b520d82b}</Project>
       <Name>Boxophobic.Utils.Scripts</Name>
@@ -990,9 +994,21 @@
       <Project>{f1e264d7-1903-809c-5f25-aa1464248b24}</Project>
       <Name>CFXRRuntime</Name>
     </ProjectReference>
+    <ProjectReference Include="Timeline.Samples.Annotation.csproj">
+      <Project>{71dbda79-b11f-744b-99e8-7f34203af603}</Project>
+      <Name>Timeline.Samples.Annotation</Name>
+    </ProjectReference>
+    <ProjectReference Include="Timeline.Samples.Tween.csproj">
+      <Project>{ed632b2a-f264-4519-76a5-f83ccd45f157}</Project>
+      <Name>Timeline.Samples.Tween</Name>
+    </ProjectReference>
     <ProjectReference Include="UniTask.csproj">
       <Project>{ec817e17-adf6-e794-5363-80dd964c71b2}</Project>
       <Name>UniTask</Name>
+    </ProjectReference>
+    <ProjectReference Include="Samples.GameplaySequence.csproj">
+      <Project>{5412e065-027e-234b-b13a-1a789be827b8}</Project>
+      <Name>Samples.GameplaySequence</Name>
     </ProjectReference>
     <ProjectReference Include="CFXRDemo.csproj">
       <Project>{e3fe95b5-ad36-0d9c-970b-d3c8e3ed2df3}</Project>
@@ -1002,6 +1018,10 @@
       <Project>{e6a5fbd1-0912-d6ac-95d0-fb2fd45d0c2c}</Project>
       <Name>UniTask.TextMeshPro</Name>
     </ProjectReference>
+    <ProjectReference Include="Timeline.Samples.Video.csproj">
+      <Project>{ef8cada8-a3c6-660f-5938-5fc942915044}</Project>
+      <Name>Timeline.Samples.Video</Name>
+    </ProjectReference>
     <ProjectReference Include="UniTask.Linq.csproj">
       <Project>{c2067037-231e-1dcd-d20d-3caa5a1ae3ea}</Project>
       <Name>UniTask.Linq</Name>
@@ -1010,17 +1030,45 @@
       <Project>{c1fcaed4-0290-831b-5c17-7b12536f711a}</Project>
       <Name>CFXR.WelcomeScreen</Name>
     </ProjectReference>
+    <ProjectReference Include="Timeline.Samples.Text.csproj">
+      <Project>{53ef3dd3-af32-bea9-cd30-165d11f6d75c}</Project>
+      <Name>Timeline.Samples.Text</Name>
+    </ProjectReference>
     <ProjectReference Include="KinoBloom.Runtime.csproj">
       <Project>{ba713a24-048b-e81d-805b-41f6a43ee67e}</Project>
       <Name>KinoBloom.Runtime</Name>
+    </ProjectReference>
+    <ProjectReference Include="Timeline.Samples.Annotation.Editor.csproj">
+      <Project>{25585243-3768-e7bf-325e-6d4e9f6a8d48}</Project>
+      <Name>Timeline.Samples.Annotation.Editor</Name>
+    </ProjectReference>
+    <ProjectReference Include="Timeline.Samples.Text.Editor.csproj">
+      <Project>{db78b329-2126-04c0-817a-c47155f345f6}</Project>
+      <Name>Timeline.Samples.Text.Editor</Name>
+    </ProjectReference>
+    <ProjectReference Include="Timeline.Samples.Utilities.Editor.csproj">
+      <Project>{3c0171f5-8d53-ab73-58d9-8a54a4cbd3c2}</Project>
+      <Name>Timeline.Samples.Utilities.Editor</Name>
     </ProjectReference>
     <ProjectReference Include="CFXREditor.csproj">
       <Project>{0ee10b0b-7f7b-9ab5-6df3-1dca51d7ea57}</Project>
       <Name>CFXREditor</Name>
     </ProjectReference>
+    <ProjectReference Include="Timeline.Samples.Tween.Editor.csproj">
+      <Project>{9c4f97bd-f050-3635-504e-acb2a230b9ff}</Project>
+      <Name>Timeline.Samples.Tween.Editor</Name>
+    </ProjectReference>
     <ProjectReference Include="Boxophobic.Utils.Editor.csproj">
       <Project>{8a111682-db22-7177-a8e3-bb9378e8aab2}</Project>
       <Name>Boxophobic.Utils.Editor</Name>
+    </ProjectReference>
+    <ProjectReference Include="Timeline.Samples.Utilities.csproj">
+      <Project>{a6a8c3f9-2caf-5bc4-7d58-02e063b1ce89}</Project>
+      <Name>Timeline.Samples.Utilities</Name>
+    </ProjectReference>
+    <ProjectReference Include="Timeline.Samples.TimeDilation.csproj">
+      <Project>{39de1d89-8b8a-130f-7290-c3d61626efa5}</Project>
+      <Name>Timeline.Samples.TimeDilation</Name>
     </ProjectReference>
     <ProjectReference Include="UniTask.DOTween.csproj">
       <Project>{5de403b4-1fee-9f1f-d8ef-536a77140a14}</Project>
